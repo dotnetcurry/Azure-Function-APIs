@@ -1,0 +1,20 @@
+<h2>List of Products</h2>
+<div class="container">{{status}}</div>
+
+<table class="table table-bordered table-striped table-dark">
+    <thead>
+        <th *ngFor="let h of headers">{{h}}</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prd of products">
+            <td *ngFor="let h of headers">{{prd[h]}}</td>
+            <td>
+                <input type="button" value="Edit" (click)="edit(prd.ProductRowId)" class="btn btn-warning">
+            </td>
+            <td>
+                <input type="button" value="Delete" (click)="delete(prd.ProductRowId)" class="btn btn-danger">
+            </td>
+        </tr>
+    </tbody>
+</table>
